@@ -1,0 +1,27 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+int sortarr(vector<int>& arr)
+{
+    sort(arr.begin(), arr.end());
+    return arr[arr.size()-1];
+    
+}
+
+//   return arr[0]; smaller
+
+
+int sortarrdes(vector<int>& arr)
+{
+    
+    sort(arr.begin(), arr.end(), greater<int>());
+    return arr[arr.size()-1];
+}
+
+int main()
+{
+   vector<int> arr={1,4,5,63,56};
+   
+   cout<<"The Largest element in the array is: "<<sortarr(arr)<<endl;
+   cout<<"The smallest element in the array is: "<<sortarrdes(arr)<<endl;
+}
