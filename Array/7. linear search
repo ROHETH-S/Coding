@@ -1,0 +1,22 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+int linearsearch(vector<int>& nums, int num)
+{
+    int l=nums.size();
+    for(int i=0; i<l; i++)
+    {
+        if(nums[i]==num)
+        {
+            cout<<"element found in " <<i;
+        }
+    }
+    return 0;
+}
+
+int main()
+{
+    vector<int> nums={1,2,3,4,5};
+    int num=5;
+    linearsearch(nums, num);
+}
