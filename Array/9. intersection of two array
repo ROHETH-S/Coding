@@ -16,8 +16,9 @@ public:
             {
             j++;
             }
-            {
+            
             else if(nums1[i]<nums2[j]) 
+            {
             i++;
             }
             else
@@ -29,7 +30,7 @@ public:
         }
         
         vector<int>ans;
-        for(auto i : s) ans.push_back(i);
+        for(auto it : s) ans.push_back(it);
         
         
         return ans;
