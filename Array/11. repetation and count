@@ -1,0 +1,39 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+vector<int> findmissing(vector<int> array)
+{
+    int n = array.size() + 1;
+   
+
+    vector<int> substitute(n, 0); 
+
+    vector<int> ans;             
+
+    for (int i = 0; i < array.size(); i++)
+    {
+        substitute[array[i]]++;
+    }
+
+    for (int i = 0; i <= array.size(); i++)
+    {
+        if (substitute[i] > 1 )
+        {
+            ans.push_back(i);
+            ans.push_back(substitute[i]); // it holds times of repetation
+        }
+    }
+
+    return ans;
+}
+
+int main()
+{
+    vector<int> array={3,1,2,5,3,5,5};
+    vector<int> res=findmissing(array);
+      for(auto & it: res)
+    {
+        cout<<it;
+    }
+    
+}
