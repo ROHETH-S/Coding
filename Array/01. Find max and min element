@@ -5,7 +5,7 @@ int FindMax(vector<int>& nums)
 {
     sort(nums.begin(), nums.end());
     return nums[nums.size()-1];
-    //   return arr[0]; smaller
+    //   return nums[0]; smaller
 
 }
 
