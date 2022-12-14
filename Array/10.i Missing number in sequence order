@@ -1,20 +1,20 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-vector<int> findmissing(vector<int> array)
+vector<int> findmissing(vector<int> nums)
 {
-    int n = array.size() + 1;
+    int n = nums.size() + 1;
 
     vector<int> substitute(n, 0); // initializing the substitute array with 0 of size n+1.
 
     vector<int> ans;              // initializing the answer  array .
 
-    for (int i = 0; i < array.size(); i++)
+    for (int i = 0; i < nums.size(); i++)
     {
-        substitute[array[i]]++;
+        substitute[nums[i]]++;
     }
 
-    for (int i = 1; i <= array.size(); i++)
+    for (int i = 1; i <= nums.size(); i++)
     {
         if (substitute[i] == 0)
         {
@@ -27,8 +27,8 @@ vector<int> findmissing(vector<int> array)
 
 int main()
 {
-    vector<int> array={3,1,2,5,3};
-    vector<int> res=findmissing(array);
+    vector<int> nums={3,1,2,5,3};
+    vector<int> res=findmissing(nums);
       for(auto & it: res)
     {
         cout<<it;
