@@ -27,7 +27,7 @@ vector<int> findmissing(vector<int> array)
 
 int main()
 {
-    vector<int> array={3,0,1};
+    vector<int> array={3,1,2,5,3};
     vector<int> res=findmissing(array);
       for(auto & it: res)
     {
@@ -35,3 +35,5 @@ int main()
     }
     
 }
+
+output:4
