@@ -1,10 +1,10 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-int FindMax(vector<int>& arr)
+int FindMax(vector<int>& nums)
 {
-    sort(arr.begin(), arr.end());
-    return arr[arr.size()-1];
+    sort(nums.begin(), nums.end());
+    return nums[nums.size()-1];
     //   return arr[0]; smaller
 
 }
@@ -12,15 +12,15 @@ int FindMax(vector<int>& arr)
 int FindMin(vector<int>& arr)
 {
 
-    sort(arr.begin(), arr.end(), greater<int>());
+    sort(nums.begin(), nums.end(), greater<int>());
     //sorting in descending order
-    return arr[arr.size()-1];
+    return nums[nums.size()-1];
 }
 
 int main()
 {
-   vector<int> arr={1,4,5,63,56};
+   vector<int> nums={1,4,5,63,56};
 
-   cout<<"The Largest element in the array is: "<<FindMax(arr)<<endl;
-   cout<<"The smallest element in the array is: "<<FindMin(arr)<<endl;
+   cout<<"The Largest element in the array is: "<<FindMax(nums)<<endl;
+   cout<<"The smallest element in the array is: "<<FindMin(nums)<<endl;
 }
