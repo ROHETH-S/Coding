@@ -1,6 +1,8 @@
-class Solution {
-public:
-    int missingNumber(vector<int>& nums)
+#include<bits/stdc++.h>
+using namespace std;
+
+
+int missingNumber(vector<int>& nums)
     {
         int l=nums.size();
         sort(nums.begin(), nums.end());
@@ -14,5 +16,10 @@ public:
         }
         
         return i;
-    }
-};
+}
+
+int main()
+{
+    vector<int> nums={9,6,4,2,3,5,7,0,1};
+    cout<<"missing number"<<missingNumber(nums);
+}
