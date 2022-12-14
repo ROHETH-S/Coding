@@ -1,16 +1,26 @@
-class Solution {
-public:
-    int findKthLargest(vector<int>& nums, int k)
+#include<bits/stdc++.h>
+using namespace std;
+
+
+int findKthLargest(vector<int>& nums, int k)
     {
-         sort(nums.begin(), nums.end(), greater<int>());
-         return nums[k -1];
+       sort(nums.begin(), nums.end(), greater<int>());
+       return nums[k -1];
         
     }
     
-     int findKthSmallest(vector<int>& nums, int k)
+    int findKthSmallest(vector<int>& nums, int k)
     {
          sort(nums.begin(), nums.end());
          return nums[k -1];
         
     }
-};
+    
+int main()
+{
+    vector<int> nums={0,1,2,3,4,5,6,7,8,9,};
+    int k=4;
+    cout<<"Kthlargestnumberis:"<<findKthLargest(nums, k)<<endl;
+    cout<<"Kthsmallestnumberis:"<<findKthSmallest(nums, k);
+    
+}
