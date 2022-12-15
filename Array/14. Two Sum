@@ -6,7 +6,7 @@ using namespace std;
       vector<int> res;
       unordered_map<int, int> mp;
 
-    for (int i = 0; i < nums.size(); ++i) 
+    for (int i = 0; i < nums.size(); i++) 
     {
 
    	 if (mp.find(target - nums[i]) != mp.end()) 
@@ -14,7 +14,6 @@ using namespace std;
 
    		 res.emplace_back(i);
    		 res.emplace_back(mp[target - nums[i]]);
-   		 return res;
    	   }
     
    	 mp[nums[i]] = i;
@@ -26,7 +25,7 @@ using namespace std;
     }
 int main()
 {
-    vector<int> nums={1,2,6,7,4};
+    vector<int> nums={1,2,6,7,4,3};
     int target=5;
     vector<int> res=twoSum(nums, target);
      for(auto & it: res)
