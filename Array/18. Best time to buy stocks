@@ -1,0 +1,34 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+int maxProfit(vector<int> &arr) 
+{
+    int maxPro = 0;
+    int n = arr.size();
+    int minPrice = INT_MAX;
+
+    for (int i = 0; i < arr.size(); i++) 
+    {
+        minPrice = min(minPrice, arr[i]);
+        maxPro = max(maxPro, arr[i] - minPrice);
+    }
+    
+    cout<<"buying price:"<<minPrice<<endl;
+    
+    return maxPro;
+}
+
+int main() 
+{
+    vector<int> arr;
+    int n, i, a;
+    cout<<"enter the size";
+    cin>>n;
+    for(i=0; i<n; i++)
+    {
+        cin>>a;
+        arr.push_back(a);
+    }
+    int maxPro = maxProfit(arr);
+    cout << "Max profit is: " << maxPro << endl;
+}
