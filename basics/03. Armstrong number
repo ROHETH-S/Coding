@@ -1,0 +1,25 @@
+class Solution 
+{
+  public:
+    string armstrongNumber(int n)
+    {
+        int temp=n;
+        int sum=0;
+        while(n!=0)
+        {
+            int y=n%10;
+            sum=sum+(y*y*y);
+            n=n/10;
+        }
+        
+        if(sum==temp)
+        {
+            cout<<"Yes";
+        }
+        
+        else
+        {
+            cout<<"No";
+        }
+    }
+};
