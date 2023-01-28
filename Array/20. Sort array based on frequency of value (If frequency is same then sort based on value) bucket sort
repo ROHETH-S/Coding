@@ -1,13 +1,13 @@
-#include <bits/stdc++.h>
-using namespace std;
-
-
-void Frequency(int arr[], int N, int K)
-{
-    unordered_map<int, int> map;
+class Solution {
+public:
+    vector<int> frequencySort(vector<int>& nums) 
+    {
+       unordered_map<int, int> map;
+       int N=nums.size();
+       vector<int> res;
  
     for (int i = 0; i < N; i++)
-        map[arr[i]]++;
+        map[nums[i]]++;
  
     // for (auto x : map)
     //     cout << x.first << " " << x.second << endl;
@@ -26,38 +26,34 @@ void Frequency(int arr[], int N, int K)
     //     }
     // }
     
-    int count = 0;
- 
-    for (int i = frequency.size() - 1; i >= 0; i--) 
+    for (int i = 0; i < frequency.size(); i++) 
     {
  
-        
         if (frequency[i].size() > 1) 
         {
             sort(frequency[i].begin(), frequency[i].end(),
                  greater<int>());
         }
         
+        
         for(int j=0; j<frequency[i].size(); j++)
         {
-             if (frequency[i][j]<=K)
-            {
-                for (auto element : frequency[i]) 
-                {
-                   cout << element << " ";
-                }
-            }
-            
+          for(int k=1; k<=i; k++)
+          {
+              res.push_back(frequency[i][j]);
+          }
+           
         }
         
        
     }
-    
-}
+       return res;
+    }
+};
  
 int main()
 {
-    int arr[] = {1,1,1,1,2,2,4,4,4,7,7};
+    int arr[] = {1,1,2,2,2,3};
     int N = sizeof(arr) / sizeof(arr[0]);
     int K=2;
     Frequency(arr, N, K);
