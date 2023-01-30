@@ -1,0 +1,23 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+int max(int arr[], int n)
+{
+    int max=arr[0];
+    for(int i=1; i<n; i++)
+    {
+        if(max<arr[i])
+        {
+           max=arr[i];   
+        }
+    }
+    
+    return max;
+}
+
+int main()
+{
+    int arr[]={10, 89, 67, 56, 45, 78};
+    int n = sizeof(arr)/sizeof(arr[0]);
+    cout<<max(arr, n);
+}
