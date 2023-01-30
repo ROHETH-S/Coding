@@ -1,0 +1,37 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+int length(string str)
+{
+   for(int i=0; str[i]!=0; i++)
+   {
+       if(str[i]>='A' && str[i]<='Z')
+       {
+           str[i]=str[i]+32;
+       }
+       
+       else if(str[i]>='a' && str[i]<='z')
+       {
+           str[i]=str[i]-32;
+       }
+       
+       // here space also be included so we have to have two condition to avoid space in loop
+       
+       else
+       {
+           continue;
+       }
+   }
+   
+   cout<<str;
+   
+   return 0;
+   
+}
+
+int main()
+{
+    string str;
+    getline(cin, str);
+    length(str);
+}
