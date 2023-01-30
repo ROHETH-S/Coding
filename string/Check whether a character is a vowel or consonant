@@ -1,0 +1,39 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+int vowelorconst(int c)
+{
+    
+    // character can be both lowercase and uppercase so it is better to convert to one form
+    
+    c= tolower(c);
+    
+    if(isalpha(c))
+    {
+         if(c== 'a' || c== 'e' || c=='i' || c=='o' || c=='u')
+        {
+           cout<<" vowel";
+        }
+    
+          else
+        {
+        cout<<"constant";
+        }
+    }
+    
+     else
+      {    
+        cout<<"not alphabet";
+    
+      }
+
+    return 0;
+    
+}
+
+int main()
+{
+    char c;
+    cin>>c;
+    vowelorconst(c);
+}
