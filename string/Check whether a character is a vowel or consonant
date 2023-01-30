@@ -1,7 +1,7 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-int vowelorconst(int c)
+int vowelorconst(char c)
 {
     
     // character can be both lowercase and uppercase so it is better to convert to one form
