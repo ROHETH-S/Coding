@@ -1,7 +1,7 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-int ascii(int c)
+int ascii(char c)
 {
     int a= int(c);
     
