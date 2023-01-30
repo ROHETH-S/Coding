@@ -1,0 +1,30 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+int length(string str)
+{
+    int count=0;
+    
+    
+   for(int i=0; str[i]!=0; i++)
+   {
+       str[i]=tolower(str[i]);
+       
+       if(str[i] == 'a' || str[i] == 'e' || str[i] == 'i' || str[i] == 'o' || str[i] == 'u' )
+       {
+           count++;
+       }
+   }
+   
+   cout<<count;
+   
+   return 0;
+   
+}
+
+int main()
+{
+    string str;
+    getline(cin, str);
+    length(str);
+}
