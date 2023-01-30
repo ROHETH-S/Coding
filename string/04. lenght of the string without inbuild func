@@ -1,0 +1,25 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+int length(string str)
+{
+    // int l= str.size();
+    // cout<<l;
+    int count=0;
+    for(int i=0; str[i]!='\0'; i++)
+    {
+        count++;
+    }
+    
+    cout<<count;
+    
+    return 0;
+   
+}
+
+int main()
+{
+    string str;
+    getline(cin, str);
+    length(str);
+}
