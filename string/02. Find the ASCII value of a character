@@ -1,0 +1,21 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+int ascii(int c)
+{
+    int a= int(c);
+    
+    cout<<a;
+    // ascii value of lower case 'a' - 97 to 'z'- 122
+     // ascii value of upper case 'A' - 65 to 'Z'- 90
+    return 0;
+    
+    
+}
+
+int main()
+{
+    char c;
+    cin>>c;
+    ascii(c);
+}
