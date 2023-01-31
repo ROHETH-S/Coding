@@ -1,0 +1,42 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+int suminstring(string str)
+{
+    int l= str.size();
+ 
+    str[0]=toupper(str[0]);
+    // first letter of the word
+    
+    for(int i=1; i<l-1; i++)
+    {
+        // if(str[i-1] == ' ' || str[i+1] == ' ')
+        // // str[i-1] before space, str[i+1] after space
+        // {
+        //     str[i]=toupper(str[i]);
+        // } or
+        
+        if(str[i]==' ')
+        {
+            str[i-1]=toupper(str[i-1]);
+            str[i+1]=toupper(str[i+1]);
+        }
+        //even though if we have more space it treated as single charachter 
+        
+    }
+    
+    str[l-1]=toupper(str[l-1]);
+    // last letter of the word
+    
+    cout<<str;
+    
+    return 0;
+   
+}
+
+int main()
+{
+    string str;
+    getline(cin, str);
+   suminstring(str);
+}
