@@ -1,0 +1,37 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+int suminstring(string str)
+{
+    int l= str.size();
+    int sum=0;
+
+    for(int i=0; i<l; i++)
+    {
+        if(str[i]>='0' && str[i]<='9')
+        {
+            sum=sum+(str[i]-'0');
+            // When you subtract '0' from str[i], you get the integer value of the digit represented by the character. For example, if str[i] is '3', 
+            then str[i]-'0' is 3. Adding str[i] directly to the sum will add the character representation of the digit to the sum which is not what you want.
+        }
+        
+        else
+        {
+           continue;
+        }
+    }
+    
+    cout<<sum;
+    
+    
+    return 0;
+   
+}
+
+int main()
+{
+    string str;
+    getline(cin, str);
+   suminstring(str);
+}
+
