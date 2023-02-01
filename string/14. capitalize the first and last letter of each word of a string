@@ -1,7 +1,7 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-int suminstring(string str)
+int capfirstlast(string str)
 {
     int l= str.size();
  
@@ -38,5 +38,5 @@ int main()
 {
     string str;
     getline(cin, str);
-   suminstring(str);
+   capfirstlast(str);
 }
