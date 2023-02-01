@@ -21,7 +21,7 @@ int suminstring(string str)
             str[i-1]=toupper(str[i-1]);
             str[i+1]=toupper(str[i+1]);
         }
-        //even though if we have more space it treated as single charachter 
+        //even though if we have more space in btw, the logic work since no change in capatalizing space
         
     }
     
