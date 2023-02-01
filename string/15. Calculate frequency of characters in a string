@@ -1,7 +1,7 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-int suminstring(string str)
+int freq(string str)
 {
     int l= str.size();
     unordered_map<char, int> mpp;
@@ -23,5 +23,5 @@ int main()
 {
     string str;
     getline(cin, str);
-   suminstring(str);
+   freq(str);
 }
