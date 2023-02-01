@@ -1,0 +1,107 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+int anagram(string str1, string str2)
+{
+    int l1= str1.size();
+    int l2=str2.size();
+    unordered_map<char, int> mpp;
+    int flag;
+    
+    if(l1 != l2)
+    {
+        flag=0;
+    }
+    
+    else
+    {
+ 
+       for(int i=0; i<l1; i++)
+        {
+          mpp[str1[i]]++;
+        }
+   
+        for(int i=0; i<l2; i++)
+        {
+          mpp[str2[i]]--;
+        }
+   
+       for(auto x: mpp)
+       {
+          if(x.second !=0)
+         {
+           flag=0;
+          }
+       
+       }
+    }
+   
+ 
+   if(flag==0)
+   {
+       cout<<" not anagram";
+   }
+   
+   else
+   {
+       cout<<"anagram";
+   }
+   
+   return 0;
+   
+}
+
+int main()
+{
+    string str1, str2;
+    getline(cin, str1);
+    getline(cin, str2);
+    anagram(str1, str2);
+}
+
+
+
+              (OR)
+              
+class Solution {
+public:
+    bool isAnagram(string s, string t) 
+    {
+        int l1= s.size();
+        int l2=t.size();
+        unordered_map<char, int> mpp;
+        int flag;
+    
+       if(l1 != l2)
+       {
+          return 0;
+       }
+    
+    else
+    {
+ 
+       for(int i=0; i<l1; i++)
+        {
+          mpp[s[i]]++;
+        }
+   
+        for(int i=0; i<l2; i++)
+        {
+          mpp[t[i]]--;
+        }
+   
+       for(auto x: mpp)
+       {
+          if(x.second !=0)
+         {
+            return 0;
+          }
+       
+       }
+    }
+   
+   
+    return 1;
+        
+    }
+};              
