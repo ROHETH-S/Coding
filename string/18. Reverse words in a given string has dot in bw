@@ -1,0 +1,46 @@
+class Solution
+{
+    public:
+  
+    string reverseWords(string S) 
+    { 
+        int l= S.size();
+        vector<string>words;
+        
+        string str="";
+        string ans="";
+        
+        for(int i=0; i<l; i++)
+        {
+            if(S[i]=='.')
+            {
+                words.push_back(str);
+                str="";
+            }
+            
+            else
+            {
+                str=str+S[i];
+            }
+            
+        }
+        
+        words.push_back(str);
+        // the last word alone cant be pushed because it dont have '.' after, so it is pushed after coming from loop
+        
+        
+        for(int i=words.size()-1; i>=1; i--)
+        {
+            ans=ans+words[i];
+            ans=ans+'.';
+            // the words in vector is concaeting to single string, and '.' added after each word
+        }
+        
+        ans=ans+words[0];
+        // for the first word(added to be last) no need '.' so we are adding it in last
+        
+        return ans;
+        
+        
+    } 
+};
