@@ -1,0 +1,56 @@
+class Solution {
+public:
+    int titleToNumber(string columnTitle) 
+    {
+        int ans=0;
+        int j=0;
+         for(int i=columnTitle.size()-1;i>=0;i--)  
+          {
+              ans+=(columnTitle[i]-'A'+1)*pow(26,j++); 
+          }
+         return ans;
+        
+    }
+};
+
+
+Suppose the input string is "AB". The loop will first process the character at the end of the string, which is 'B'.
+
+
+    i = 1 (last index of the string)
+    j = 0 (initial value)
+    c[i] = 'B'
+    
+The calculation in the line ans+=(c[i]-'A'+1)*pow(26,j++); will then be as follows:
+
+    ans += (c[i] - 'A' + 1) * pow(26, j++);
+    ans += (66 - 65 + 1) * pow(26, 0); // ASCII value of 'B' is 66, and ASCII value of 'A' is 65
+    ans += 2 * pow(26, 0);
+    ans += 2 * 1;
+    ans += 2;
+
+After this iteration, ans will have the value 2, and j will have the value 1.
+
+The loop will then process the second last character in the string, which is 'A'.
+
+
+    i = 0 (second last index of the string)
+    j = 1 (incremented value from the previous iteration)
+    c[i] = 'A'
+    
+The calculation in the line ans+=(c[i]-'A'+1)*pow(26,j++); will then be as follows:
+
+
+    ans += (c[i] - 'A' + 1) * pow(26, j++);
+    ans += (65 - 65 + 1) * pow(26, 1); // ASCII value of 'A' is 65
+    ans += 1 * pow(26, 1);
+    ans += 1 * 26;
+    ans += 26;
+After this iteration, ans will have the value 28, which is the column number corresponding to the column title "AB".
+
+
+
+
+how pow work, how is calculated
+The pow function calculates the power of a number. It takes two arguments, the base and the exponent. 
+The pow function returns the result of the base raised to the power of the exponent. For example, pow(2, 3) will return 8, which is 2 raised to the power of 3.
