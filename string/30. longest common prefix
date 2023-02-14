@@ -15,6 +15,8 @@ public:
 
             }
             s += c;
+            //it may have duplicate value, so we are adding outside
+            
         }
         return s;
         
