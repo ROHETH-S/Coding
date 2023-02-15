@@ -1,0 +1,45 @@
+class Solution {
+public:
+    string sortSentence(string s) 
+    {
+        int l= s.size();
+        vector<string> ans(10);
+        string str="";
+    
+
+        for(int i=0; i<l; i++)
+        {
+            if(isalpha(s[i]))
+            {
+                str=str+s[i];
+            }
+
+            else if(isdigit(s[i]))
+            {
+                int index=s[i]-'1';
+                ans[index]=str;
+                str.clear();
+            }
+
+            else
+            {
+                continue;
+            }
+        }
+
+    
+      string res =ans[0];
+      for(int i = 1; i < ans.size(); i++) 
+       {
+           //since we are delaring for space 10, some may have blank space which doesnt want to be printed
+           if(ans[i] != "")
+           {
+                res += " " + ans[i];
+           }
+            
+       }
+
+        
+        return res;
+    }
+};
