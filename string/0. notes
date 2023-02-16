@@ -1,6 +1,12 @@
 we cant simply a convert a string to lower by "to_lower" we must loop and change each charachter
+
 we cant push back a string in "push_back" we can only do for char
+string s1="";
+s1=s1+word1[i];
+
 we cant concanetate to char, only string be
 
 in the string we cant simply use the digt present in the string as int, we must do this 
 index=s[i]-'1';
+
+
