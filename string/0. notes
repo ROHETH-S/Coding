@@ -10,3 +10,15 @@ in the string we cant simply use the digt present in the string as int, we must 
 index=s[i]-'1';
 
 
+"find()" method is to check for string, charachter in present in both string
+ for(auto x : patterns) 
+        {
+            if(word.find(x) != string::npos) 
+            {
+                count++;
+            }
+        }
+  here it check for the elements is present in the patterns(array) is there in word, only the substring elements are counted
+  for eg, 
+  Input patterns = ["a", ab", "abc", "abd"]  word = "abcd"
+Output 3 // abd is not a substirng 
