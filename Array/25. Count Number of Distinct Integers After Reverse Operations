@@ -1,0 +1,27 @@
+class Solution {
+public:
+    int countDistinctIntegers(vector<int>& nums) 
+    {
+        int l=nums.size();
+        for(int i=0; i<l; i++)
+        {
+            int a=nums[i];
+            string str=to_string(a);
+            reverse(str.begin(), str.end());
+            int b= stoi(str);
+            nums.push_back(b);
+        }
+
+        set<int>ans;
+        for(int i=0; i<nums.size(); i++)
+        {
+            ans.insert(nums[i]);
+        }
+
+        int res=ans.size();
+
+        return res;
+        
+        
+    }
+};
