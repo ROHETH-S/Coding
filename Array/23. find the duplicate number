@@ -21,3 +21,5 @@ public:
          return 0;
     }
 };
+
+do binary search
