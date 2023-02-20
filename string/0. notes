@@ -22,3 +22,6 @@ index=s[i]-'1';
   for eg, 
   Input patterns = ["a", ab", "abc", "abd"]  word = "abcd"
 Output 3 // abd is not a substirng 
+
+string::npos is a static member constant of the std::string class in C++. The value string::npos is used to represent the absence of a valid index or position in a string
+if element not found it retur -1
