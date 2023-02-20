@@ -1,0 +1,39 @@
+class Solution {
+public:
+    bool judgeCircle(string s) 
+    {
+        int l=s.size();
+        int count1=0, count2=0, count3=0, count4=0;
+
+        for(int i=0; i<l; i++)
+        {
+            if(s[i]=='U')
+            {
+              count1++;
+            }
+
+             if(s[i]=='D')
+            {
+                count2++;
+            }
+
+             if(s[i]=='R')
+            {
+                count3++;
+            }
+
+             if(s[i]=='L')
+            {
+                count4++;
+            }
+        }
+
+        if(count1==count2 && count3==count4)
+        {
+            return 1;
+        }
+
+        return 0;
+        
+    }
+};
