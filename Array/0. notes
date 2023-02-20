@@ -2,3 +2,8 @@ segmentation fault occurse if there is no return value or return value is of oth
 
 run time error happens, when size is not declared properly 
  vector<int> ans(max_num+1, 0); do like this
+
+
+for reversing the digit, it is better to convdert as string and do reverse operation
+number can be converted to string by "to_string()"
+and string can be converted  to int by "stoi()" or by subtracting (str[i] - '0')
