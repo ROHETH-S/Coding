@@ -43,5 +43,5 @@ for(i=0,j=0; i<l1 || j<l2; i++,j++)
             }
         }  
         
-        
+it is better to give false condition if statemnt and run the program        
         
