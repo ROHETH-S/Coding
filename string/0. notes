@@ -25,3 +25,23 @@ Output 3 // abd is not a substirng
 
 string::npos is a static member constant of the std::string class in C++. The value string::npos is used to represent the absence of a valid index or position in a string
 if element not found it retur -1
+
+
+we must always intialize int flag=0 if we need
+
+if we need to travel two different string, we can travel in a single loop, but the both the string must be of same length if not, there will be run time error
+to overcome this, eg- merge string alternativly
+for(i=0,j=0; i<l1 || j<l2; i++,j++)
+        {
+            if(i<l1) 
+            {
+                str=str+word1[i];
+            }
+            if(j<l2)
+             {
+                str=str+word2[j];
+            }
+        }  
+        
+        
+        
