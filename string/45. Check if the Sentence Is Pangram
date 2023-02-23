@@ -1,0 +1,21 @@
+class Solution {
+public:
+    bool checkIfPangram(string sentence) 
+    {
+        int l=sentence.size();
+        unordered_map<char, int> mpp;
+        for(int i=0; i<l; i++)
+        {
+            mpp[sentence[i]]++;
+        }
+
+        int n=mpp.size();
+
+        if(n==26)
+        {
+            return true;
+        }
+        
+        return false;
+    }
+};
