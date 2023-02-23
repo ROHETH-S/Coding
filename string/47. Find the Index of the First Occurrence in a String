@@ -1,0 +1,17 @@
+class Solution {
+public:
+    int strStr(string haystack, string needle) 
+    {
+       
+        string temp=needle;
+        int a=0;
+        
+        size_t pos = haystack.find(needle);
+         if (pos != string::npos) {
+        return pos;
+    }
+        
+        return -1;
+        
+    }
+};
