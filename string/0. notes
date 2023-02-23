@@ -23,6 +23,13 @@ index=s[i]-'1';
   Input patterns = ["a", ab", "abc", "abd"]  word = "abcd"
 Output 3 // abd is not a substirng 
 
+for finding position we can do this
+  size_t pos = haystack.find(needle);
+         if (pos != string::npos) {
+        return pos;
+    }
+    
+
 string::npos is a static member constant of the std::string class in C++. The value string::npos is used to represent the absence of a valid index or position in a string
 if element not found it retur -1
 
