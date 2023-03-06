@@ -9,7 +9,7 @@ we cant concanetate to char, only string be
 in the string we cant simply use the digt present in the string as int, we must do this 
 index=s[i]-'1';
 
-
+find() method it only for stirng and char, not for integers, use size_t
 "find()" method is to check for string, charachter in present in both string
  for(auto x : patterns) 
         {
@@ -58,4 +58,7 @@ for(i=0,j=0; i<l1 || j<l2; i++,j++)
         }  
         
 it is better to give false condition if statemnt and run the program        
+
+ char shifted_char = (s[i] - 'a' + total_shift) % 26 + 'a';
+        //s[i]-a will be a number, after mod%26, +a will turn it to alphabet
         
