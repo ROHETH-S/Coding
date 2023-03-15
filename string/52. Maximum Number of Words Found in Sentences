@@ -1,0 +1,28 @@
+class Solution {
+public:
+    int mostWordsFound(vector<string>& s) 
+    {
+        int l=s.size();
+        int count=0;
+        vector<int> ans;
+        for(int i=0; i<l; i++)
+        {
+           for(char c: s[i])
+           {
+               if(c==' ')
+               {
+                   count++;
+               }
+           }
+
+           count++;
+           ans.push_back(count);
+           count=0;
+        }
+
+       int res=*max_element(ans.begin(), ans.end());
+
+        return res;
+        
+    }
+};
