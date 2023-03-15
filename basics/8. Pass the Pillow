@@ -1,0 +1,23 @@
+class Solution {
+public:
+    int passThePillow(int n, int time)
+     {
+         int pos = 1; // starting position
+        int dir = 1; // starting direction (moving right)
+        
+        for (int i = 0; i < time; i++) 
+        {
+            // update position
+            pos += dir;
+            
+            // check if we reached the end of the line
+            if (pos == n+1 || pos == 0) 
+            {
+                dir *= -1; // change direction
+                pos += 2*dir; // update position based on new direction
+            }
+        }
+        
+        return pos;
+    }
+};
