@@ -1,0 +1,33 @@
+class Solution {
+public:
+    char nextGreatestLetter(vector<char>& letters, char target) 
+    {
+        int n = letters.size();
+        int l = 0;
+        int r = n - 1;
+
+        while (l <= r) 
+        {
+            // int mid = left + (right - left) / 2;
+            int m=(l+r)/2;
+
+
+            if (letters[m] <= target) 
+            {
+                l = m + 1;
+            } 
+            
+            else 
+            {
+                r = m - 1;
+            }
+        }
+
+        if (l >= n) 
+        {
+            return letters[0];
+        }
+
+        return letters[l];
+    }
+};
