@@ -7,3 +7,10 @@ run time error happens, when size is not declared properly
 for reversing the digit, it is better to convdert as string and do reverse operation
 number can be converted to string by "to_string()"
 and string can be converted  to int by "stoi()" or by subtracting (str[i] - '0')
+
+
+int max_elem1= *max_element(res.begin(), res.end());
+             auto x = find(res.begin(), res.end(), max_elem1);
+             if (x != res.end()) res.erase(x);
+                   
+int min_elem1=*min_element(a.begin(), a.end());
