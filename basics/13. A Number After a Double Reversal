@@ -1,0 +1,22 @@
+class Solution {
+public:
+    int revFunc(int n)
+    {
+        int rev=0;
+        while(n>0)
+        {
+            int t=n%10;
+            rev= rev*10+t;
+            n/=10;
+        }
+        return rev;
+    }
+    bool isSameAfterReversals(int num) 
+    {
+        int org=num;
+        int reverse1=revFunc(num);
+        int reverse2=revFunc(reverse1);
+        return reverse2==num;
+        
+    }
+};
