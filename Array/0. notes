@@ -14,3 +14,12 @@ int max_elem1= *max_element(res.begin(), res.end());
              if (x != res.end()) res.erase(x);
                    
 int min_elem1=*min_element(a.begin(), a.end());
+
+  for (int num : unique1) 
+        {
+            if (unique2.count(num) == 0) 
+            {
+                res1.push_back(num);
+            }
+        }
+       count function used to find the presence the of element unique1 set in unique2 set
