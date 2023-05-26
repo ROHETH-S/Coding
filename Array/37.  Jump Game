@@ -1,0 +1,75 @@
+// class Solution {
+// public:
+//     bool canJump(vector<int>& nums) {
+
+//         int l=nums.size()-1;
+
+//         if(nums.size()==1)
+//         {
+//             return true;
+//         }
+
+//         if(nums.size()==2)
+//         {
+//             if(nums[1]==0)
+//             {
+//                 return true;
+//             }
+            
+//             if(nums[1]>1)
+//             {
+//                 return true;
+//             }
+//             return false;
+//         }
+
+//         int a=nums[1];
+//         if(a==0)
+//         {
+//             return false;
+//         }
+        
+//         if(nums[l]==0)
+//         {
+//             return true;
+//         }
+//         int b=l-a;
+
+
+//         if(b==nums[2])
+//         {
+//             return true;
+//         }
+        
+//         return false;
+//     }
+// };
+// bruteforce at the max :(
+
+class Solution {
+public:
+    bool canJump(vector<int>& nums) 
+    {
+        int n = nums.size();
+        int maxIndex = 0;
+        
+        for (int i = 0; i < n; i++) 
+        {
+            if (i > maxIndex)
+             {
+               
+                return false;
+            }
+            maxIndex = max(maxIndex, i + nums[i]);
+
+            if (maxIndex >= n-1) 
+            {
+            
+                return true;
+            }
+        }
+        
+        
+        return false;
+    }
+};
