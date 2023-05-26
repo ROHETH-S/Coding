@@ -1,0 +1,31 @@
+class Solution {
+public:
+    int lastStoneWeight(vector<int>& stones) 
+    {
+        vector<int> res;
+        for(int i=0; i<stones.size(); i++)
+        {
+            res.push_back(stones[i]);
+        }
+
+       while(res.size() > 1)
+       {           
+             int max_elem1= *max_element(res.begin(), res.end());
+             auto x = find(res.begin(), res.end(), max_elem1);
+             if (x != res.end()) res.erase(x);
+             
+             if (res.empty()) break;
+             
+             int max_elem2= *max_element(res.begin(), res.end());
+             auto y = find(res.begin(), res.end(), max_elem2);
+             if (y != res.end()) res.erase(y);
+
+             if (max_elem1 != max_elem2)
+             {
+                res.push_back(max_elem1 - max_elem2);
+             }
+       }
+       
+       return res.empty() ? 0 : res[0];
+    }
+};
