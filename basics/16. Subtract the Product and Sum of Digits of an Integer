@@ -1,0 +1,19 @@
+class Solution {
+public:
+    int subtractProductAndSum(int n) 
+    {
+        int r, sum1=0, sum2=1;
+        while(n>0)
+        {
+            r= n%10;
+            sum1=sum1+r;
+            sum2=sum2*r;
+            n=n/10;
+        }
+
+        int ans=sum2-sum1;
+
+        return ans;
+        
+    }
+};
