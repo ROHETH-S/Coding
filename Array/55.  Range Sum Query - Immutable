@@ -1,0 +1,19 @@
+class NumArray 
+{
+ public:
+    vector< int>  sum;
+    NumArray(vector<int>& a) 
+    {
+        sum.resize(a.size()+1,0);
+        for( int i=1;i<=a.size();i++)
+        {
+            sum[i]+=sum[i-1]+a[i-1];
+        }
+    }
+    
+    int sumRange(int l, int r) 
+    {
+        return sum[r+1]-sum[l];
+    }
+        
+};
