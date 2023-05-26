@@ -1,0 +1,14 @@
+class Solution {
+public:
+        int maximizeSum(vector<int>& nums, int k)
+        {
+         int res=0;
+         sort(nums.begin(), nums.end());
+         while(k>0)
+         {
+            res+=nums[nums.size()-1]++;
+            k--;
+         }
+        return res;
+    }
+};
