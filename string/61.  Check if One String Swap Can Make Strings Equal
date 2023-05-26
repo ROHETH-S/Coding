@@ -1,0 +1,56 @@
+
+
+class Solution {
+public:
+    bool areAlmostEqual(string s1, string s2) 
+    {
+        if (s1.size() != s2.size())
+         {
+            return false;
+        }
+
+        int mismatchCount = 0;
+        int mismatchIndex1 = -1;
+        int mismatchIndex2 = -1;
+
+        for (int i = 0; i < s1.size(); i++) 
+        {
+            if (s1[i] != s2[i]) 
+            {
+                mismatchCount++;
+
+                if (mismatchCount == 1) 
+                {
+                    mismatchIndex1 = i;
+                } 
+                
+                else if (mismatchCount == 2) 
+                {
+                    mismatchIndex2 = i;
+                }
+                
+                else 
+                 {
+                    return false; 
+                }
+            }
+        }
+
+        if (mismatchCount == 0) 
+        {
+            return true; 
+        }
+
+        if (mismatchCount != 2) 
+        {
+            return false; 
+        }
+
+        if (s1[mismatchIndex1] != s2[mismatchIndex2] || s1[mismatchIndex2] != s2[mismatchIndex1]) 
+        {
+            return false; 
+        }
+
+        return true;
+    }
+};
