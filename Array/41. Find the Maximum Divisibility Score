@@ -1,0 +1,50 @@
+class Solution {
+public:
+    int maxDivScore(vector<int>& nums, vector<int>& divisors) 
+    {
+
+        int j=0;
+        int count=0;
+
+        unordered_map<int, int> mpp;
+        for(int i=0; i<divisors.size(); i++)
+        {
+            mpp[divisors[i]]=0;
+        }
+
+
+       for(int j=0; j<divisors.size(); j++)
+       {
+
+         for(int i=0; i<nums.size(); i++)
+         {
+            if(nums[i] % divisors[j]==0)
+            {
+                count++;
+            }
+         }
+
+         mpp[divisors[j]]=count;
+         count=0;
+       }
+
+       int maxScore = 0;
+        int result = INT_MAX;
+        for(int i=0; i<divisors.size(); i++)
+        {
+            if(mpp[divisors[i]] > maxScore)
+            {
+                maxScore = mpp[divisors[i]];
+                result = divisors[i];
+            }
+            else if(mpp[divisors[i]] == maxScore)
+            {
+                result = min(result, divisors[i]);
+            }
+        }
+
+        return result;
+
+        
+    }
+};
