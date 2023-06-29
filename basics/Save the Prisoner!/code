@@ -1,0 +1,4 @@
+ int seatno= s+m-1;
+        seatno= seatno%n;
+        if(seatno==0) return n;
+        return seatno;
