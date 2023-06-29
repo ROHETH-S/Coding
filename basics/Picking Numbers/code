@@ -1,0 +1,21 @@
+int pickingNumbers(vector<int> a) {
+    sort(a.begin(), a.end());
+    
+   
+    int concecutive = 0;
+    int maxConcecutive = 0;
+    int minSoFar = a[0];
+    
+    for(auto i = a.begin(); i<a.end(); i++){
+        
+        if(*(i+1) - minSoFar <= 1){
+            concecutive++;
+        } else {
+            
+            maxConcecutive = max(maxConcecutive, concecutive);
+            minSoFar = *(i+1);
+            concecutive = 0;
+        }
+    }
+    return maxConcecutive +1;
+}
