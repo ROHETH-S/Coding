@@ -1,0 +1,137 @@
+// class Solution {
+// public:
+//     string reformatDate(string date) 
+//     {
+//         string year="";
+//         for(int i=date.size()-1; date[i]!='\0'; i--)
+//         {
+//             year=year+date[i];
+//         }
+
+//         reverse(year.begin(), year.end());
+
+//         string dat="";
+//         for(int i=0; !isalpha(date[i]); i++)
+//         {
+//             dat=dat+date[i];
+//         }
+//         if(dat.size()==1)
+//         {
+//             dat[1]=dat[0];
+//             dat[0]='0';
+//         }
+
+//         string month="";
+//         for(int i=0; i<date.size(); i++)
+//         {
+//             if(date[i]=='\0' && date[i+4]=='\0')
+//             {
+//                 month=date.substr(i,i+4);
+//             }
+//         }
+        
+//         string monthnum;
+
+//         if (month == "jan") 
+//         {
+//             monthnum = "01";
+//         } 
+//         else if (month == "feb") 
+//         {
+//             monthnum = "02";
+//         } 
+//         else if (month == "mar") 
+//         {
+//             monthnum = "03";
+//         } else if (month == "apr") 
+//         {
+//             monthnum = "04";
+//         } 
+//         else if (month == "may") 
+//         {
+//             monthnum = "05";
+//         } 
+//         else if (month == "jun") 
+//         {
+//             monthnum = "06";
+//         } 
+//         else if (month == "jul") 
+//         {
+//             monthnum = "07";
+//         } 
+//         else if (month == "aug") 
+//         {
+//             monthnum = "08";
+//         } 
+//         else if (month == "sep") 
+//         {
+//             monthnum = "09";
+//         } 
+//         else if (month == "oct") 
+//         {
+//             monthnum = "10";
+//         } 
+//         else if (month == "nov") 
+//         {
+//             monthnum = "11";
+//         } 
+//         else if (month == "dec") 
+//         {
+//             monthnum = "12";
+//         }
+
+
+//         string ans=year+"-"+monthnum+"-"+dat;
+
+//         return ans;
+
+        
+//     }
+// };
+
+#include <string>
+#include <algorithm>
+#include <sstream>
+
+class Solution {
+public:
+    string reformatDate(string date) {
+        string day, month, year;
+        istringstream iss(date);
+        iss >> day >> month >> year;
+        
+        string monthNum;
+        if (month == "Jan") {
+            monthNum = "01";
+        } else if (month == "Feb") {
+            monthNum = "02";
+        } else if (month == "Mar") {
+            monthNum = "03";
+        } else if (month == "Apr") {
+            monthNum = "04";
+        } else if (month == "May") {
+            monthNum = "05";
+        } else if (month == "Jun") {
+            monthNum = "06";
+        } else if (month == "Jul") {
+            monthNum = "07";
+        } else if (month == "Aug") {
+            monthNum = "08";
+        } else if (month == "Sep") {
+            monthNum = "09";
+        } else if (month == "Oct") {
+            monthNum = "10";
+        } else if (month == "Nov") {
+            monthNum = "11";
+        } else if (month == "Dec") {
+            monthNum = "12";
+        }
+        
+        string dayNum = day.substr(0, day.size() - 2);
+        if (dayNum.size() == 1) {
+            dayNum = "0" + dayNum;
+        }
+        
+        return year + "-" + monthNum + "-" + dayNum;
+    }
+};
