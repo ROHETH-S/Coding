@@ -59,4 +59,5 @@ it is better to give false condition if statemnt and run the program
 
  char shifted_char = (s[i] - 'a' + total_shift) % 26 + 'a';
         //s[i]-a will be a number, after mod%26, +a will turn it to alphabet
-        
+
+when we need to sort inside the map priority queue must be used, see ex 74        
