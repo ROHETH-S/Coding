@@ -1,0 +1,21 @@
+class Solution {
+public:
+    char repeatedCharacter(string s) 
+    {
+      int minx=INT_MAX;
+     
+      for(int i=0; i<s.size(); i++)
+      {
+        for(int j=i+1; j<s.size(); j++)
+        {
+            if(s[i]==s[j])
+            {
+                minx=min(minx,j);
+            }
+        }
+      }
+    
+    return s[minx];
+
+    }
+};
