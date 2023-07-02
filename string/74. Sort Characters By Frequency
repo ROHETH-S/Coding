@@ -1,0 +1,58 @@
+// class Solution {
+// public:
+//     string frequencySort(string s)
+//     {
+//         unordered_map<char, int> mpp;
+
+//         for (int i = 0; i < s.size(); i++)
+//         {
+//             mpp[s[i]]++;
+//         }
+
+//         vector<pair<char, int>> sortedPairs(mpp.begin(), mpp.end());
+
+//         sort(sortedPairs.begin(), sortedPairs.end(),
+//             [](const pair<char, int>& a, const pair<char, int>& b)
+//             {
+//                 return a.second > b.second; 
+//             });
+
+       
+//         string str = "";
+//         for (const auto& pair : sortedPairs)
+//         {
+//             string str1 = "";
+
+//             for (int i = 0; i < pair.second; i++)
+//             {
+//                 str1 = str1 + pair.first;
+//             }
+//             str = str + str1;
+//         }
+
+//         return str;
+//     }
+// }; Memory limit exceed failed only 2 test case
+
+class Solution {
+public:
+    string frequencySort(string s) 
+    {
+        unordered_map<char, int> freqMap;
+
+        for (char c : s) {
+            freqMap[c]++;
+        }
+
+        sort(s.begin(), s.end(), [&](char a, char b) 
+        {
+            if (freqMap[a] == freqMap[b]) 
+            {
+                return a < b;
+            }
+            return freqMap[a] > freqMap[b];
+        });
+
+        return s;
+    }
+};
