@@ -1,0 +1,22 @@
+class Solution {
+public:
+    int largestAltitude(vector<int>& gain) 
+    {
+        vector<int>res;
+
+        res.push_back(0);
+        res.push_back(gain[0]);
+        int a=gain[0];
+
+        for(int i=1; i<gain.size(); i++)
+        {
+            a= a + gain[i];
+            res.push_back(a); 
+        }
+
+        int maxi=*max_element(res.begin(), res.end());
+
+        return maxi;
+        
+    }
+};
