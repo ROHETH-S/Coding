@@ -9,7 +9,7 @@ vector<int> rotatearray(vector<int>& nums, int k)
     for(int i=0; i<l; i++)
     {
             temp[(i+k)%l]=nums[i];//right
-            temp[(i - k + l) % l] = nums[i];
+            temp[(i - k + l) % l] = nums[i];//left
                             
     }
         
