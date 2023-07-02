@@ -1,0 +1,88 @@
+// class Solution {
+// public:
+//     bool isUgly(int n) 
+//     {
+//          if (n <= 0) 
+//          {
+//             return false;
+//         }
+
+//         vector<int> res;
+
+//         for(int i=2; i<=n; i++)
+//         {
+//             if(n%i==0)
+//             {
+//                 res.push_back(i);
+//             }
+//         }
+
+//         int count=0;
+//         vector<int> ans;
+
+//         for(int i=0; i<res.size(); i++)
+//         {
+//             for(int j=2; j<res[i]; j++)
+//             {
+//                 if(res[i]%j==0)
+//                 {
+//                     count++;
+//                     break;
+//                 }
+//             }
+
+//             if(count==0)
+//             {
+//                 ans.push_back(res[i]);
+//             }
+
+//             count=0;
+//         }
+
+//         int pri=0;
+
+//         for(auto x: ans)
+//         {
+//             if(x!=2 && x!=3 && x!=5)
+//             {
+//                 pri++;
+//             }
+//         }
+
+//         if(pri==0)
+//         {
+//             return true;
+//         }
+
+//         return false;
+        
+//     }
+// }; Time Limit Exceeded:(
+
+
+class Solution {
+public: 
+    bool isUgly(int n) 
+    {
+        if(n==0)return false;
+
+        while(n%5==0)
+        {
+            n=n/5;
+        }
+
+        while(n%3==0)
+        {
+            n=n/3;
+        }
+
+        while(n%2==0)
+        {
+            n=n/2;
+        }
+
+        if(n==1)return true;
+        
+        else return false;
+    }
+};
