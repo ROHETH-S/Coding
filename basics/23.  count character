@@ -1,0 +1,31 @@
+Input: cccc0ddEEE     Output:c401d2E3
+
+#include <iostream>
+#include <string>
+
+std::string countCharacters(const std::string& input) {
+    std::string output;
+    int count = 1;
+
+    for (int i = 0; i < input.length(); i++) {
+        if (input[i] == input[i + 1]) {
+            count++;
+        } else {
+            output += input[i] + std::to_string(count);
+            count = 1;
+        }
+    }
+
+    return output;
+}
+
+int main() {
+    std::string input;
+    std::cout << "Input: ";
+    std::cin >> input;
+
+    std::string result = countCharacters(input);
+    std::cout << "Output: " << result << std::endl;
+
+    return 0;
+}
